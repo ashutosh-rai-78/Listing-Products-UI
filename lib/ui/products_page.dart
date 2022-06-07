@@ -28,8 +28,8 @@ class ProductsPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.network(
-                        'https://picsum.photos/seed/picsum/any',
-                        fit: BoxFit.contain,
+                        'https://source.unsplash.com/random/300x200',
+                        fit: BoxFit.cover,
                         height: 200,
                       ),
                       const Padding(
