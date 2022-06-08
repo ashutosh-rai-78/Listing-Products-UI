@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
+
 class ProductsPage extends StatelessWidget {
-  const ProductsPage({Key? key}) : super(key: key);
+  ProductsPage({Key? key}) : super(key: key);
+  var size, height, width;
 
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
+
     return Scaffold(
         appBar: AppBar(),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
-            // physics: const NeverScrollableScrollPhysics(),
+              // physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 crossAxisSpacing: 5.0,
                 mainAxisSpacing: 5.0,
                 childAspectRatio: 0.6,
               ),
               itemCount: 10,
               itemBuilder: (context, index) {
-                return Card(
+                return
+                  Card(
                   semanticContainer: true,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   shape: RoundedRectangleBorder(
@@ -60,7 +67,6 @@ class ProductsPage extends StatelessWidget {
                           left: 10,
                         ),
                         child: Row(
-
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
@@ -103,6 +109,7 @@ class ProductsPage extends StatelessWidget {
                   ),
                 );
               }),
-        ));;
+        ));
+    ;
   }
 }
